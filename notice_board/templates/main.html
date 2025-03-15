@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>게시판</title>
+    </head>
+<body>
+    <h1>게시판</h1>
+    
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>제목</th>
+                <th>작성 시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %} <!--반복문을 사용하여 올라온 게시글을 계속 출력-->
+                <tr>
+                    <td><a href="{{ url_for('read', idx=post[0]) }}">{{ post[0] }}</a></td> <!-- 작성 글을 보기 위해 idx를 클릭할 수 있게 만듦 -->
+                    <td>{{ post[1] }}</td> <!-- 작성자 -->
+                    <td>{{ post[2] }}</td> <!-- 제목 -->
+                    <td>{{ post[3] }}</td> <!-- 글 작성 시간 -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="/write">새 글 작성</a>
+    <button id="logoutButton">로그아웃</button> <!--작동 안됨..-->
+</body>
+</html>
