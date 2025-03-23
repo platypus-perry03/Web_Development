@@ -1,0 +1,116 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 전체 레이아웃 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6A11CB, #2575FC);
+    color: #fff;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+    text-align: center;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6A11CB;
+}
+
+/* 게시글 정보 테이블 스타일 */
+.post-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* 테이블 헤더 및 셀 스타일 */
+.post-table th, .post-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* 테이블 헤더 스타일 */
+.post-table th {
+    background: #6A11CB;
+    color: white;
+    width: 20%;
+}
+
+/* 테이블 내용 스타일 */
+.post-table td {
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* 내용 칸의 크기 조정 */
+.content-row td {
+    height: 200px;
+    vertical-align: top;
+}
+
+/* 버튼 컨테이너 스타일 */
+.post-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* 수정 버튼 스타일 */
+.post-buttons a button {
+    background: #ffa500;
+    color: white;
+}
+
+.post-buttons a button:hover {
+    background: #e69500;
+}
+
+/* 삭제 버튼 스타일 */
+.delete-btn {
+    background: #d6303b;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b3222d;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.post-buttons button:last-child {
+    background: #555;
+    color: white;
+}
+
+.post-buttons button:last-child:hover {
+    background: #444;
+}

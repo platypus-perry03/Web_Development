@@ -1,0 +1,118 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    box-sizing: border-box; /* 요소 크기 계산 시 padding과 border를 포함 */
+    font-family: 'Roboto', sans-serif; /* 기본 폰트 설정 */
+}
+
+/* 전체 배경 스타일 */
+body {
+    display: flex; /* 중앙 정렬을 위한 flexbox 적용 */
+    justify-content: center; /* 가로 방향 가운데 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    min-height: 100vh; /* 최소 높이를 화면 높이(100vh)로 설정 */
+    background: linear-gradient(to right, #6A11CB, #2575FC); /* 배경에 보라색-파란색 그라디언트 적용 */
+    color: #fff; /* 기본 글자 색상을 흰색으로 설정 */
+}
+
+/* 컨테이너 스타일 */
+.container {
+    width: 40%; /* 컨테이너 너비 설정 */
+    background: white; /* 컨테이너 배경을 흰색으로 설정 */
+    padding: 20px; /* 내부 여백 설정 */
+    border-radius: 10px; /* 모서리를 둥글게 만듦 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    color: #333; /* 텍스트 색상을 어두운 회색으로 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 24px; /* 글자 크기 설정 */
+    margin-bottom: 20px; /* 아래쪽 여백 추가 */
+    color: #6A11CB; /* 보라색 글자 색상 */
+}
+
+/* 테이블 스타일 */
+.write-table {
+    width: 100%; /* 테이블 너비를 100%로 설정 */
+    border-collapse: collapse; /* 테두리 간격을 제거 */
+    margin-bottom: 20px; /* 아래쪽 여백 추가 */
+}
+
+.write-table th, .write-table td {
+    padding: 12px; /* 셀 내부 여백 설정 */
+    border: 1px solid #ddd; /* 테두리를 연한 회색으로 설정 */
+    text-align: left; /* 기본적으로 왼쪽 정렬 */
+    font-size: 16px; /* 글자 크기 설정 */
+}
+
+.write-table th {
+    background: #6A11CB; /* 제목 셀 배경을 보라색으로 설정 */
+    color: white; /* 제목 글자를 흰색으로 설정 */
+    width: 20%; /* 제목 칸 너비 설정 */
+    text-align: center; /* 제목 텍스트 중앙 정렬 */
+}
+
+.write-table td {
+    background: #f9f9f9; /* 본문 칸 배경을 연한 회색으로 설정 */
+    color: #333; /* 본문 텍스트 색상 설정 */
+}
+
+/* 입력 필드 스타일 */
+.write-table input[type="text"], .write-table textarea {
+    width: 100%; /* 입력 필드 너비를 100%로 설정 */
+    padding: 10px; /* 내부 여백 설정 */
+    border: 1px solid #ccc; /* 테두리를 연한 회색으로 설정 */
+    border-radius: 5px; /* 모서리를 둥글게 처리 */
+    font-size: 16px; /* 글자 크기 설정 */
+}
+
+/* 내용 입력 칸 스타일 */
+.content-row td {
+    height: 200px; /* 셀 높이를 200px로 설정 */
+    vertical-align: top; /* 내용이 위쪽부터 표시되도록 설정 */
+}
+
+.write-table textarea {
+    height: 150px; /* 텍스트 입력창 높이 설정 */
+    resize: vertical; /* 세로 크기만 조절 가능하도록 설정 */
+}
+
+/* 버튼 스타일 */
+.write-buttons {
+    display: flex; /* 버튼을 가로 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 버튼을 배치 */
+    margin-top: 15px; /* 위쪽 여백 추가 */
+}
+
+button {
+    padding: 10px 20px; /* 버튼 내부 여백 설정 */
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 버튼 모서리를 둥글게 설정 */
+    cursor: pointer; /* 마우스 오버 시 커서를 포인터로 변경 */
+    font-weight: bold; /* 글자를 굵게 설정 */
+    transition: 0.3s; /* 부드러운 효과 적용 */
+}
+
+
+/* 게시글 작성 버튼 스타일 */
+.write-buttons button:first-child {
+    background: #28a745; /* 초록색 배경 */
+    color: white; /* 흰색 글씨 */
+}
+
+.write-buttons button:first-child:hover {
+    background: #218838; /* 마우스 오버 시 더 진한 초록색 */
+}
+
+/* 뒤로 가기 버튼 스타일 */
+.write-buttons button:last-child {
+    background: #d6303b; /* 빨간색 배경 */
+    color: white; /* 흰색 글씨 */
+}
+
+.write-buttons button:last-child:hover {
+    background: #b3222d; /* 마우스 오버 시 더 진한 빨간색 */
+}
