@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from flask_mysqldb import MySQL
+from dotenv import load_dotenv
 import logging
+import os
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # 세션을 위한 secret_key 설정
@@ -8,7 +10,7 @@ app.secret_key = "your_secret_key"  # 세션을 위한 secret_key 설정
 # MySQL 설정
 app.config['MYSQL_HOST'] = 'localhost'  # MySQL 서버 주소
 app.config['MYSQL_USER'] = 'root'  # MySQL 사용자
-app.config['MYSQL_PASSWORD'] = '1234'  # MySQL 비밀번호
+app.config['MYSQL_PASSWORD'] = os.getenv("DB_PW")  # MySQL 비밀번호
 app.config['MYSQL_DB'] = 'flask_board'  # 사용할 데이터베이스 이름
 
 mysql = MySQL(app)  # MySQL 객체 생성
