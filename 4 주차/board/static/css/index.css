@@ -1,0 +1,163 @@
+/* 전체 기본 스타일 초기화 및 글꼴 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 페이지 배경과 중앙 정렬 */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #6A11CB, #2575FC);
+    color: #fff;
+}
+
+/* 메인 제목 */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* 부제목 */
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* 사용자 정보 (프로필 영역) */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-size: 1.2rem;
+}
+
+/* 프로필 및 유저 목록 버튼 스타일 */
+.profile-link {
+    background-color: orange;
+    color: white;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition: background-color 0.3s ease;
+}
+
+.profile-link:hover {
+    background-color: darkorange;
+}
+
+/* 로그아웃 버튼 */
+#logoutButton {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+#logoutButton:hover {
+    background: #d6303b;
+}
+
+/* 검색 폼 */
+#searchForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 검색 입력 및 셀렉트 박스 */
+#searchOption, #searchQuery {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+#searchQuery {
+    width: 200px;
+}
+
+/* 검색 버튼 */
+button[type="submit"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #218838;
+}
+
+/* 게시글 테이블 */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background: white;
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #6A11CB;
+    color: white;
+}
+
+/* 게시글 제목 링크 */
+td a {
+    text-decoration: none;
+    color: #2575FC;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+td a:hover {
+    color: #6A11CB;
+}
+
+/* 글 작성 버튼 */
+a > button {
+    background: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+a > button:hover {
+    background: #e69500;
+}
