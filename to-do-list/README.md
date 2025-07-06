@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# 📋 To-Do List 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+하루 할 일과 일정 관리를 위한 **React 기반 To-Do List 앱**입니다.  
+할 일 추가, 완료 체크, 삭제, 고정(pin), 날짜별 마감 관리, 반복 일정 등록 등 다양한 기능을 제공합니다.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📂 폴더 구조
 
-### `npm start`
+to-do-list/
+├── public/
+│ └── index.html # 루트 HTML 파일
+├── src/
+│ ├── components/ # UI 구성 요소
+│ │ ├── Calendar/ # 캘린더 뷰 관련 컴포넌트
+│ │ ├── Stats/ # 통계 뷰 (아직 미구현 또는 확장 예정)
+│ │ ├── Tabs/ # 상단 탭 컴포넌트 (할 일 / 캘린더 / 통계)
+│ │ └── Todo/ # 할 일 목록 및 항목 컴포넌트
+│ ├── context/ # 로그인 상태 관리용 Context API
+│ ├── styles/ # CSS 스타일 파일들
+│ ├── utils/ # 반복 일정 처리 유틸리티
+│ ├── App.js # 라우팅 및 메인 앱 컴포넌트
+│ └── index.js # React 진입점
+├── .gitignore
+├── package.json
+├── README.md
+└── README.old.md # 초기 create-react-app 생성 시 기본 파일
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ 이름 기반 로그인 / 가입 (실제 인증은 없음)
+- 📝 할 일 추가, 완료 체크 / 해제
+- 📅 마감일 지정 + 달력에 자동 표시
+- 📌 고정(Pin) 기능으로 상단 고정
+- 🔁 반복 일정 설정 (일간 / 주간 / 월간)
+- 🗑️ 할 일 삭제
+- 📆 달력 뷰에서 날짜별 할 일 확인
+- 📊 통계 기능 (확장 예정)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 기술 스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**
+- **React Router** - 페이지 라우팅 처리
+- **Context API** - 사용자 로그인 상태 전역 관리
+- **CSS** - 컴포넌트별 스타일링
+- **LocalStorage** - 브라우저 로컬 데이터 저장
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧪 실행 방법
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. 프로젝트 폴더로 이동:
+   ```bash
+   cd to-do-list
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔒 참고사항
+이 앱은 백엔드 서버 없이 로컬 상태(LocalStorage) 기반으로 작동합니다.<br>
+로그인 정보, 할 일 목록은 브라우저에 저장되며 새로고침 후에도 유지됩니다.
