@@ -1,0 +1,68 @@
+/* 모달 전체 배경 (어두운 반투명 배경 + 중앙 정렬) */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(200, 230, 255, 0.6); /* 반투명 파란 배경 */
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;     /* 세로 중앙 정렬 */
+  z-index: 999; /* 항상 위에 표시 */
+}
+
+/* 모달 박스 스타일 */
+.modal-content {
+  background-color: #e8f6fd; /* 밝은 파란 배경 */
+  border: 3px solid #a4d3ef; /* 테두리 */
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 4px 4px 12px rgba(160, 210, 240, 0.4); /* 그림자 효과 */
+  text-align: center;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+}
+
+/* 모달 제목 스타일 */
+.modal-content h3 {
+  color: #3178a0;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+/* 입력창 스타일 */
+.modal-content input {
+  padding: 10px;
+  width: 90%;
+  border: 2px solid #b5e3f7;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background-color: #f3fbff;
+}
+
+/* 버튼 기본 스타일 */
+.modal-content button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #4aa3df;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 비활성화된 버튼 스타일 */
+.modal-content button:disabled {
+  background-color: #e2f0f7;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* 마우스 오버 시 (활성 상태일 때만) */
+.modal-content button:hover:not(:disabled) {
+  background-color: #318ecb;
+}

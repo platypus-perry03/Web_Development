@@ -1,0 +1,19 @@
+.profile-card {
+  border: 2px solid #007acc;
+  padding: 24px;
+  border-radius: 12px;
+  width: 320px;
+  background-color: #e6f2ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-card h2 {
+  color: #005999;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  margin: 6px 0;
+  color: #003f5c;
+}
