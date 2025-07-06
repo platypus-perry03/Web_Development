@@ -3,10 +3,9 @@
 하루 할 일과 일정 관리를 위한 **React 기반 To-Do List 앱**입니다.  
 할 일 추가, 완료 체크, 삭제, 고정(pin), 날짜별 마감 관리, 반복 일정 등록 등 다양한 기능을 제공합니다.
 
----
 
 ## 📂 폴더 구조
-
+```
 to-do-list/
 ├── public/
 │ └── index.html # 루트 HTML 파일
@@ -25,9 +24,7 @@ to-do-list/
 ├── package.json
 ├── README.md
 └── README.old.md # 초기 create-react-app 생성 시 기본 파일
-
-
----
+```
 
 ## ✨ 주요 기능
 
@@ -40,7 +37,6 @@ to-do-list/
 - 📆 달력 뷰에서 날짜별 할 일 확인
 - 📊 통계 기능 (확장 예정)
 
----
 
 ## 🛠 기술 스택
 
@@ -50,14 +46,14 @@ to-do-list/
 - **CSS** - 컴포넌트별 스타일링
 - **LocalStorage** - 브라우저 로컬 데이터 저장
 
----
 
 ## 🧪 실행 방법
 
 1. 프로젝트 폴더로 이동:
-   ```bash
-   cd to-do-list
-
+```
+cd to-do-list
+npm start
+```
 🔒 참고사항
 이 앱은 백엔드 서버 없이 로컬 상태(LocalStorage) 기반으로 작동합니다.<br>
 로그인 정보, 할 일 목록은 브라우저에 저장되며 새로고침 후에도 유지됩니다.
