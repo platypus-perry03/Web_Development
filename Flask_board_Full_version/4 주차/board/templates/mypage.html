@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.name }}님의 프로필</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+    <script src="{{ url_for('static', filename='js/mypage.js') }}"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>{{ user.name }}님의 프로필</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    alert("{{ messages[0] }}");
+                </script>
+            {% endif %}
+        {% endwith %}
+
+        <form id="profileForm" method="POST" action="/myprofile" enctype="multipart/form-data">
+            <div class="profile-main">
+                <!-- 왼쪽: 이미지 -->
+                <div class="left-section">
+                    <div class="image-box">
+                        <img id="previewImage"
+                             src="{{ url_for('uploaded_file', filename=user.image_url) if user.image_url else url_for('static', filename='img/default.png') }}"
+                             alt="프로필 이미지">
+                    </div>
+                    {% if is_owner %}
+                    <input type="file" name="profile_image" id="profile_image" accept="image/*" style="display: none;">
+                    {% endif %}
+                </div>
+
+                <!-- 오른쪽: 자기소개 -->
+                <div class="right-section">
+                    <label for="introduce">자기소개</label>
+                    <p id="introduceView">{{ user.introduce or '자기소개가 없습니다.' }}</p>
+                    <textarea name="introduce" id="introduceInput" placeholder="자기소개를 입력하세요..." style="display: none;">{{ user.introduce or '' }}</textarea>
+                </div>
+            </div>
+
+            <!-- 사용자 정보 -->
+            <div class="profile-info">
+                <div class="info-row">
+                    <div class="label">이름</div>
+                    <div class="value">
+                        <p id="nameView">{{ user.name }}</p>
+                        <input type="text" name="name" id="nameInput" value="{{ user.name }}" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="label">학교</div>
+                    <div class="value">
+                        <p id="schoolView">{{ user.school }}</p>
+                        <input type="text" name="school" id="schoolInput" value="{{ user.school }}" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="label">이메일</div>
+                    <div class="value">
+                        <p id="emailView">{{ user.email }}</p>
+                        <input type="email" name="email" id="emailInput" value="{{ user.email }}" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 버튼들 -->
+            <div class="profile-buttons">
+                {% if is_owner %}
+                <button type="button" id="editBtn">변경</button>
+                <button type="submit" id="saveBtn" style="display: none;">저장</button>
+                {% endif %}
+                <button type="button" id="backBtn" data-from="{{ from_page or 'index' }}">뒤로</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
