@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/secret.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <title>게시판</title>
+</head>
+<body>
+    <h1>게시판 목록</h1>
+
+    <!-- 사용자 정보 + 버튼 -->
+    <div class="user-info">
+        <span class="username">사용자: {{ username }}</span>
+        <div class="user-buttons">
+            <a href="/mypage" class="profile-link">프로필</a>
+            <a href="/users" class="profile-link">유저 목록</a>
+        </div>
+    </div>
+
+    <button id="logoutButton">로그아웃</button><br>
+
+    <!-- 검색 폼 -->
+    <form method="GET" action="/search" id="searchForm">
+        <select name="search_option" id="searchOption">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="all">전체</option>
+        </select>
+        <input type="text" name="search_query" id="searchQuery" placeholder="검색어를 입력하세요">
+        <button type="submit">검색</button>
+    </form>
+
+    <!-- 글 게시 성공 메시지 표시 -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                alert("{{ messages[0] }}");
+            </script>
+        {% endif %}
+    {% endwith %}
+
+    <!-- 게시글 목록 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>작성자(ID)</th>
+                <th>제목</th>
+                <th>작성 시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in board_list %}
+            <tr>
+                <td>{{ post['idx'] }}</td>
+                <td>{{ post['writer'] }}</td>
+                <td>
+                    <a href="#" class="read-link" data-id="{{ post['idx'] }}" data-secret="{{ post['secret_key'] }}">
+                        {% if post['secret_key'] %}
+                            <span class="lock-icon">🔒</span>
+                        {% endif %}
+                        {{ post['title'] }}
+                    </a>
+                </td>
+                <td>{{ post['w_time'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/write"><button>글 작성</button></a>
+</body>
+</html>

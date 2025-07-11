@@ -1,0 +1,109 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0; /* 모든 요소의 기본 마진 제거 */
+    padding: 0; /* 모든 요소의 기본 패딩 제거 */
+    box-sizing: border-box; /* 요소 크기 계산 시 border와 padding 포함 */
+    font-family: 'Roboto', sans-serif; /* 전체 글꼴을 'Roboto'로 설정 */
+}
+
+/* 배경 스타일 */
+body {
+    display: flex; /* Flexbox를 사용하여 중앙 정렬 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    height: 100vh; /* 화면 전체 높이 설정 */
+    background: linear-gradient(to right, #6A11CB, #2575FC); /* 보라색 → 파란색 그라디언트 배경 */
+}
+
+/* 로그인 박스 스타일 */
+.login-wrapper {
+    width: 400px; /* 로그인 박스의 너비 */
+    padding: 30px; /* 내부 여백 */
+    background: #fff; /* 배경색 흰색 */
+    border-radius: 15px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 박스에 그림자 효과 추가 */
+    text-align: center; /* 내부 텍스트 중앙 정렬 */
+    display: flex; /* 내부 요소 정렬을 위한 Flexbox 적용 */
+    flex-direction: column; /* 내부 요소를 세로로 정렬 */
+    align-items: center; /* 내부 요소 가운데 정렬 */
+}
+
+/* 제목 스타일 */
+.login-title {
+    width: 100%; /* 제목이 박스 전체 너비를 차지하도록 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-bottom: 20px; /* 아래쪽 여백 추가 */
+}
+
+.login-title h2 {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: bold; /* 글자 굵기 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 10px; /* 제목 아래 여백 */
+}
+
+/* 로그인 폼 스타일 */
+#loginForm {
+    width: 100%; /* 폼 너비를 부모 요소에 맞춤 */
+    display: flex; /* Flexbox 적용 */
+    flex-direction: column; /* 입력 필드 및 버튼을 세로 정렬 */
+}
+
+/* 라벨 스타일 */
+#loginForm label {
+    text-align: left; /* 왼쪽 정렬 */
+    font-size: 14px; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 5px; /* 아래 여백 추가 */
+    display: block; /* 블록 요소로 변경하여 줄바꿈 적용 */
+}
+
+/* 입력 필드 스타일 */
+#loginForm input {
+    width: 100%; /* 입력 필드 너비를 부모 요소에 맞춤 */
+    height: 40px; /* 입력 필드 높이 설정 */
+    padding: 10px; /* 내부 여백 */
+    font-size: 14px; /* 글자 크기 */
+    border: 1px solid #ccc; /* 테두리 색상 */
+    border-radius: 8px; /* 모서리를 둥글게 */
+    outline: none; /* 클릭 시 기본 테두리 제거 */
+    transition: 0.3s; /* 부드러운 스타일 변경 효과 */
+}
+
+/* 입력 필드 포커스 효과 */
+#loginForm input:focus {
+    border-color: #6A11CB; /* 포커스 시 테두리 색상을 보라색으로 변경 */
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.3); /* 포커스 시 부드러운 그림자 효과 추가 */
+}
+
+/* 로그인 버튼 스타일 */
+#loginForm button {
+    width: 100%; /* 버튼 너비를 부모 요소에 맞춤 */
+    height: 45px; /* 버튼 높이 설정 */
+    font-size: 16px; /* 글자 크기 */
+    background: #6A11CB; /* 배경색 (보라색) */
+    color: white; /* 글자 색상을 흰색으로 설정 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+    border-radius: 8px; /* 모서리를 둥글게 */
+    margin-top: 10px; /* 위쪽 여백 추가 */
+    font-weight: bold; /* 글자 굵기 */
+    transition: 0.3s; /* 부드러운 색상 변경 효과 */
+}
+
+/* 로그인 버튼 호버 효과 */
+#loginForm button:hover {
+    background: #5a0fb1; /* 마우스 오버 시 더 짙은 보라색으로 변경 */
+}
+
+/* 회원가입 버튼 스타일 */
+#loginForm a > button {
+    background: #e0e0e0; /* 회원가입 버튼 배경색 (회색) */
+    color: #333; /* 글자 색상 */
+}
+
+/* 회원가입 버튼 호버 효과 */
+#loginForm a > button:hover {
+    background: #ccc; /* 마우스 오버 시 더 짙은 회색으로 변경 */
+}
